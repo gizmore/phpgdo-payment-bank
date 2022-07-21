@@ -10,7 +10,7 @@ use GDO\Payment\MethodPayment;
  */
 final class InitPayment extends MethodPayment
 {
-	public function isAlwaysTransactional() { return true; }
+	public function isAlwaysTransactional() : bool { return true; }
 	
 	public function execute()
 	{
