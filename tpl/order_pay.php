@@ -20,7 +20,7 @@ $card = GDT_Card::make();
 $card->title(t('t_pay_with_bank'));
 $card->subtitle(t('st_pay_with_bank'));
 
-$card->addFields(array(
+$card->addFields(
 	GDT_Paragraph::make()->html(t('p_pay_with_bank')),
 	$module->getConfigColumn('owner'),
 	$module->getConfigColumn('iban'),
@@ -28,13 +28,13 @@ $card->addFields(array(
 	GDT_Money::make('total_tax')->label('pdforder_sum_tax', [$order->getTax()])->value($order->getPriceMWST()),
 	GDT_Money::make('price')->var($order->getPrice()),
 	GDT_String::make('purpose')->var($module->getTransferPurpose($order)),
-));
+);
 
 $card->addField(
-	GDT_Bar::make()->horizontal()->addFields(array(
+	GDT_Bar::make()->horizontal()->addFields(
 		GDT_Button::make('confirm')->label('btn_confirm')->href(href('PaymentBank', 'Confirm', "&order={$order->getID()}")),
 		GDT_Button::make('cancel')->label('btn_cancel')->href(href('PaymentBank', 'Cancel', "&order={$order->getID()}")),
-	)),
+	),
 );
 
 echo $card->render();
