@@ -7,7 +7,7 @@ use GDO\User\GDO_User;
 
 final class Cancel extends MethodPayment
 {
-    public function isTrivial() { return false; }
+    public function isTrivial() : bool { return false; }
     
 	public function execute()
 	{
