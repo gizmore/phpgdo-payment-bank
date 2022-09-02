@@ -21,7 +21,7 @@ $card->title(t('t_pay_with_bank'));
 $card->subtitle(t('st_pay_with_bank'));
 
 $card->addFields(
-	GDT_Paragraph::make()->html(t('p_pay_with_bank')),
+	GDT_Paragraph::make()->text('p_pay_with_bank'),
 	$module->getConfigColumn('owner'),
 	$module->getConfigColumn('iban'),
 	$module->getConfigColumn('bic'),
