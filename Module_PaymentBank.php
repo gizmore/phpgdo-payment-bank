@@ -40,12 +40,12 @@ final class Module_PaymentBank extends PaymentModule
 	
 	public function renderOrderFragment(GDO_Order $order)
 	{
-		return $this->templatePHP('order_fragment.php', ['order' => $order]);
+		return $this->php('order_fragment.php', ['order' => $order]);
 	}
 
 	public function getFooterHTML(GDO_Order $order=null)
 	{
-		return $this->templatePHP('pdf_footer_html.php', ['order' => $order]);
+		return $this->php('pdf_footer_html.php', ['order' => $order]);
 	}
 
 }
