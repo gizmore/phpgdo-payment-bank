@@ -12,7 +12,7 @@ use GDO\Core\GDT_String;
  */
 final class GDT_BIC extends GDT_String
 {
-	public function defaultLabel() : self { return $this->label('bic'); }
+	public function defaultLabel(): static { return $this->label('bic'); }
 	
 	protected function __construct()
 	{
