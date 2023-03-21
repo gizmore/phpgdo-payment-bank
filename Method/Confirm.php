@@ -1,12 +1,13 @@
 <?php
 namespace GDO\PaymentBank\Method;
 
+use GDO\Payment\BillingMails;
 use GDO\Payment\MethodPayment;
 use GDO\PaymentBank\Module_PaymentBank;
-use GDO\Payment\BillingMails;
 
 final class Confirm extends MethodPayment
 {
+
 	public function execute()
 	{
 		$module = Module_PaymentBank::instance();

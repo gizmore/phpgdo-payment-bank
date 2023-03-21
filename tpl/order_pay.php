@@ -1,15 +1,15 @@
 <?php
 
-use GDO\UI\GDT_Card;
-use GDO\Payment\GDO_Order;
-use GDO\UI\GDT_Paragraph;
 use GDO\Core\GDT_String;
-use GDO\PaymentBank\Module_PaymentBank;
-use GDO\UI\GDT_Button;
-use GDO\UI\GDT_Bar;
+use GDO\Payment\GDO_Order;
 use GDO\Payment\GDT_Money;
+use GDO\PaymentBank\Module_PaymentBank;
+use GDO\UI\GDT_Bar;
+use GDO\UI\GDT_Button;
+use GDO\UI\GDT_Card;
+use GDO\UI\GDT_Paragraph;
 
-/** @var $order GDO_Order **/
+/** @var $order GDO_Order * */
 $order instanceof GDO_Order;
 
 $module = Module_PaymentBank::instance();

@@ -1,17 +1,19 @@
 <?php
 namespace GDO\PaymentBank\Method;
 
-use GDO\User\GDO_User;
-use GDO\Core\Website;
 use GDO\Payment\MethodPayment;
+use GDO\User\GDO_User;
+
 /**
  * Pay with bank transfer.
+ *
  * @author gizmore
  */
 final class InitPayment extends MethodPayment
 {
-	public function isAlwaysTransactional() : bool { return true; }
-	
+
+	public function isAlwaysTransactional(): bool { return true; }
+
 	public function execute()
 	{
 		$user = GDO_User::current();
@@ -22,10 +24,10 @@ final class InitPayment extends MethodPayment
 			return $this->error('err_order')->addField(
 				$order ? $order->redirectFailure() : $this->redirect(href(GDO_MODULE, GDO_METHOD)));
 		}
-		$tVars = array(
+		$tVars = [
 			'order' => $order,
-		);
+		];
 		return $this->templatePHP('order_pay.php', $tVars);
 	}
-	
+
 }
