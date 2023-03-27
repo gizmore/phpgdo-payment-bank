@@ -1,6 +1,7 @@
 <?php
 namespace GDO\PaymentBank\Method;
 
+use GDO\Core\GDT;
 use GDO\Payment\MethodPayment;
 use GDO\User\GDO_User;
 
@@ -9,7 +10,7 @@ final class Cancel extends MethodPayment
 
 	public function isTrivial(): bool { return false; }
 
-	public function execute()
+	public function execute(): GDT
 	{
 		$user = GDO_User::current();
 		if (!($order = $this->getOrder()))

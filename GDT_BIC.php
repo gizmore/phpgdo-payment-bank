@@ -23,12 +23,14 @@ final class GDT_BIC extends GDT_String
 
 	public function defaultLabel(): self { return $this->label('bic'); }
 
-	public function validate($value): bool
+	public function validate(int|float|string|array|null|object|bool $value): bool
 	{
 		if (parent::validate($value))
 		{
 			return true; # @TODO Implement BIC check
 		}
+
+		return true;
 	}
 
 }

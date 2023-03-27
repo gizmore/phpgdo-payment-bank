@@ -1,6 +1,7 @@
 <?php
 namespace GDO\PaymentBank\Method;
 
+use GDO\Core\GDT;
 use GDO\Payment\BillingMails;
 use GDO\Payment\MethodPayment;
 use GDO\PaymentBank\Module_PaymentBank;
@@ -8,7 +9,7 @@ use GDO\PaymentBank\Module_PaymentBank;
 final class Confirm extends MethodPayment
 {
 
-	public function execute()
+	public function execute(): GDT
 	{
 		$module = Module_PaymentBank::instance();
 		$order = $this->getOrderPersisted();

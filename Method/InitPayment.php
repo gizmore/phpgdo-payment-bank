@@ -1,6 +1,7 @@
 <?php
 namespace GDO\PaymentBank\Method;
 
+use GDO\Core\GDT;
 use GDO\Payment\MethodPayment;
 use GDO\User\GDO_User;
 
@@ -14,7 +15,7 @@ final class InitPayment extends MethodPayment
 
 	public function isAlwaysTransactional(): bool { return true; }
 
-	public function execute()
+	public function execute(): GDT
 	{
 		$user = GDO_User::current();
 		# Check
