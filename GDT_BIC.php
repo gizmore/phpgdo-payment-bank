@@ -21,7 +21,8 @@ final class GDT_BIC extends GDT_String
 		$this->caseI();
 	}
 
-	public function defaultLabel(): self { return $this->label('bic'); }
+	public function gdtDefaultLabel(): ?string
+    { return 'bic'; }
 
 	public function validate(int|float|string|array|null|object|bool $value): bool
 	{
